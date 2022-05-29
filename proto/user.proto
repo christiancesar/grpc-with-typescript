@@ -5,16 +5,25 @@ package user;
 import "google/protobuf/empty.proto";
 
 message User {
-  string id = 1;
-  string email = 2;
-  string username = 3;
+  string id = 1;         
+  string email = 2;      
+  string firstname = 3; 
+  string lastname = 4;  
+  int64 age = 5;        
+  string birthday = 6;   
 }
 
 message UserResponse {
   repeated User user = 1;
+ 
+}
 
+message UserRequest {
+  User user = 1;
 }
 
 service Users {
+  rpc createUser(UserRequest) returns (UserResponse);
   rpc listUsers(google.protobuf.Empty) returns (UserResponse);
+  rpc showUser(UserRequest) returns (UserResponse);
 }

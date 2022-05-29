@@ -12,8 +12,14 @@ export class User extends jspb.Message {
     setId(value: string): User;
     getEmail(): string;
     setEmail(value: string): User;
-    getUsername(): string;
-    setUsername(value: string): User;
+    getFirstname(): string;
+    setFirstname(value: string): User;
+    getLastname(): string;
+    setLastname(value: string): User;
+    getAge(): number;
+    setAge(value: number): User;
+    getBirthday(): string;
+    setBirthday(value: string): User;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): User.AsObject;
@@ -29,7 +35,10 @@ export namespace User {
     export type AsObject = {
         id: string,
         email: string,
-        username: string,
+        firstname: string,
+        lastname: string,
+        age: number,
+        birthday: string,
     }
 }
 
@@ -52,5 +61,28 @@ export class UserResponse extends jspb.Message {
 export namespace UserResponse {
     export type AsObject = {
         userList: Array<User.AsObject>,
+    }
+}
+
+export class UserRequest extends jspb.Message { 
+
+    hasUser(): boolean;
+    clearUser(): void;
+    getUser(): User | undefined;
+    setUser(value?: User): UserRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): UserRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: UserRequest): UserRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: UserRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): UserRequest;
+    static deserializeBinaryFromReader(message: UserRequest, reader: jspb.BinaryReader): UserRequest;
+}
+
+export namespace UserRequest {
+    export type AsObject = {
+        user?: User.AsObject,
     }
 }
