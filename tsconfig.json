@@ -5,8 +5,8 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "outDir": "./dist",
-    "rootDir": "server/src",
+    // "outDir": "./dist",
+    // "rootDir": ["server/src"],
     // "paths": {
     //   "@config/*": ["config/*"],
     //   "@modules/*": ["modules/*"],
