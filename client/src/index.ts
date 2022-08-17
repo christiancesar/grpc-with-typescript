@@ -1,5 +1,7 @@
+import { Empty } from 'google-protobuf/google/protobuf/empty_pb';
 import { createUserServiceRequest } from './createUserServiceRequest';
 import { ICreateUser } from './ICreateUser.dto';
+import { usersClient } from './usersClient';
 
 
 
@@ -16,7 +18,7 @@ const user = {
   
   /* -------------------------------------Create User------------------------------- */  
   //Create User Normal
-  createUserServiceRequest()
+  // createUserServiceRequest()
   
   //Create User With Promise  
   
@@ -30,7 +32,7 @@ const user = {
 
   /* -------------------------------------List User------------------------------- */ 
 
-  // client.listUsers(new Empty(), (err, notes) => {
+  // usersClient.listUsers(new Empty(), (err, notes) => {
   //   if (err) return console.log(err)
   //   console.log(notes.toObject())
   // })
